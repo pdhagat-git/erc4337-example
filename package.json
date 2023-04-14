@@ -5,7 +5,9 @@
   "author": "Prabhansh Dhagat",
   "private": true,
   "scripts": {
-    "lint": "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all"
+    "lint": "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all",
+    "postinstall": "husky install",
+    "prepare": "husky install"
   },
   "dependencies": {},
   "devDependencies": {
@@ -14,7 +16,7 @@
     "@nrwl/linter": "^15.9.2",
     "eslint": "^8.38.0",
     "hardhat": "^2.13.1",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.1",
     "nx": "15.9.2",
     "prettier": "^2.8.7",
@@ -22,11 +24,6 @@
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
     "eslint-config-prettier": "8.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "apps/**/*.ts": [
