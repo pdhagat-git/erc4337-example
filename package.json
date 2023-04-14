@@ -1,0 +1,30 @@
+{
+  "name": "erc4337-example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Prabhansh Dhagat",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
+    "nx": "15.9.2",
+    "prettier": "^2.8.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "apps/**/*.ts": [
+      "eslint --fix",
+      "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all"
+    ],
+    "packages/**/*.ts": [
+      "eslint --fix",
+      "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all"
+    ]
+  }
+}
