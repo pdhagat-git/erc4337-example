@@ -16,6 +16,7 @@
     "@openzeppelin/contracts": "^4.8.3",
     "axios": "^1.0.0",
     "dotenv": "^16.0.3",
+    "helmet": "^6.1.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0"
@@ -44,6 +45,8 @@
     "@typescript-eslint/eslint-plugin": "5.50.0",
     "@typescript-eslint/parser": "5.50.0",
     "chai": "^4.2.0",
+    "class-validator": "^0.14.0",
+    "convict": "^6.2.4",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "8.1.0",
     "hardhat": "^2.13.1",
