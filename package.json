@@ -1,0 +1,54 @@
+{
+  "name": "erc4337-example",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Prabhansh Dhagat",
+  "private": true,
+  "scripts": {
+    "lint": "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all",
+    "prepare": "husky install",
+    "build": "nx run-many --target=build --all"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@nrwl/eslint-plugin-nx": "^15.9.2",
+    "@nrwl/linter": "^15.9.2",
+    "@typechain/ethers-v5": "^10.1.0",
+    "@typechain/hardhat": "^6.1.2",
+    "@types/chai": "^4.2.0",
+    "@types/mocha": ">=9.1.0",
+    "@typescript-eslint/eslint-plugin": "5.50.0",
+    "@typescript-eslint/parser": "5.50.0",
+    "chai": "^4.2.0",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "8.1.0",
+    "hardhat": "^2.13.1",
+    "hardhat-gas-reporter": "^1.0.8",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.1",
+    "nx": "15.9.2",
+    "prettier": "^2.8.7",
+    "solidity-coverage": "^0.8.1",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.0",
+    "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "apps/**/*.ts": [
+      "eslint --fix",
+      "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all"
+    ],
+    "packages/**/*.ts": [
+      "eslint --fix",
+      "nx workspace-lint --fix && nx run-many --target=lint --all --fix && nx format:write --all"
+    ]
+  }
+}
