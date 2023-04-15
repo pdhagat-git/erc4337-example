@@ -58,19 +58,4 @@ contract Paymaster is Ownable, BasePaymaster {
 
         emit ChildAddressesRemoved(_addresses);
     }
-
-    /** 
-      * @notice Function to withdraw funds
-      * @dev can be only called by contract owner
-      * @param _amount amount to withdraw
-      * @param toAddress address to transfer funds to
-    */
-    function withdrawFunds(uint256 _amount, address toAddress) external onlyOwner {        
-        require(toAddress != address(0), "Paymaster: toAddress cannot be zero address");
-
-        (bool success, ) = toAddress.call{value: _amount}("");
-        require(success, "Paymaster: withdrawal failed");
-    }
-
-    receive() external payable {}
 }
