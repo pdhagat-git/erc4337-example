@@ -15,6 +15,13 @@ async function bootstrap() {
 
   app.use(helmet())
 
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    }),
+  )
+
   const port = configService.get('app.port')
   await app.listen(port)
   Logger.log(

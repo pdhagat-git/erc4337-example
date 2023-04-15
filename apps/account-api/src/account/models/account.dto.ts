@@ -1,6 +1,6 @@
 import { IsString, IsEmail, IsOptional } from 'class-validator'
 
-export class UpdateUserDTO {
+export class UserOpsDTO {
   @IsString()
   sender: string
 

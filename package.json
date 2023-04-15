@@ -16,6 +16,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@openzeppelin/contracts": "^4.8.3",
     "axios": "^1.0.0",
+    "class-transformer": "^0.5.1",
     "dotenv": "^16.0.3",
     "helmet": "^6.1.5",
     "reflect-metadata": "^0.1.13",

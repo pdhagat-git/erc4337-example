@@ -43,8 +43,11 @@ export class RPCService {
   async getUserOpReceipt(userOpHash: string, timeout = 30000, interval = 5000) {
     const endtime = Date.now() + timeout
     while (Date.now() < endtime) {
+      const currentBlock = await this.provider.getBlockNumber()
       const events = await this.entryPointView.queryFilter(
         this.entryPointView.filters.UserOperationEvent(userOpHash),
+        currentBlock - 10000,
+        currentBlock,
       )
       if (events.length > 0) {
         return events[0].transactionHash
