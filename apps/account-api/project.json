@@ -1,0 +1,50 @@
+{
+  "name": "account-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/account-api/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/account-api",
+        "main": "apps/account-api/src/main.ts",
+        "tsConfig": "apps/account-api/tsconfig.app.json",
+        "assets": ["apps/account-api/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/account-api/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "account-api:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "account-api:build:development"
+        },
+        "production": {
+          "buildTarget": "account-api:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/account-api/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
